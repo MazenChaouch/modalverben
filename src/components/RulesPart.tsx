@@ -228,7 +228,7 @@ export const RulesPart = ({ onGoExercises }: { onGoExercises: () => void }) => (
                 <User className="w-5 h-5 text-ink/60 mb-3" strokeWidth={2.2} />
                 <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink-soft mb-1.5">2 · Modalverb</div>
                 <div className="font-display text-lg font-[650] leading-snug">kann, muss, darf …</div>
-                <div className="text-sm text-ink-soft mt1">Wird konjugiert: ich kann, du kannst …</div>
+                <div className="text-sm text-ink-soft mt-1">Wird konjugiert: ich kann, du kannst …</div>
               </div>
               <div className="rounded-2xl border-2 border-accent bg-accent/[0.06] p-5">
                 <Target className="w-5 h-5 text-accent mb-3" strokeWidth={2.2} />
@@ -339,7 +339,7 @@ export const RulesPart = ({ onGoExercises }: { onGoExercises: () => void }) => (
           </Reveal>
           <GoldenRule>
             Vokalwechsel nur im <B>Singular</B>: können → kann/kannst/kann. Im Plural bleibt der
-            Umlaut: können, dürft, müsst. <B>sollen</B> und <B>wollen</B> haben keinen Vokalwechsel.
+            Umlaut: können, dürft, müsst. <B>sollen</B> und <B>möchten</B> haben keinen Vokalwechsel.
           </GoldenRule>
         </div>
       </Chapter>

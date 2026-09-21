@@ -88,12 +88,12 @@ export const modalMeanings: ModalMeaning[] = [
   {
     id: "möchten",
     verb: "möchten",
-    meaning: "möchte ausdrücken, dass man etwas gern hätte oder tun würde — höflich, weich, wunschbezogen.",
+    meaning: "möchten drückt einen höflichen Wunsch aus — etwas, das man gern hätte oder gern tun würde. Höflich, weich, wunschbezogen.",
     en: "would like to — expresses a polite wish or desire",
     examples: [
       { de: "Ich möchte einen Kaffee, bitte.", en: "I would like a coffee, please." },
-      { de: "Wir möchten nach Berlin fahren.", en: "We would like to go to Berlin." },
-      { de: "Möchtest du mir helfen?", en: "Would you like to help me?" },
+      { de: "Wir möchten nächste Woche nach Berlin fahren.", en: "We would like to travel to Berlin next week." },
+      { de: "Möchtest du mir bei den Hausaufgaben helfen?", en: "Would you like to help me with my homework?" },
     ],
   },
   {
@@ -103,8 +103,8 @@ export const modalMeanings: ModalMeaning[] = [
     en: "can / to be able to — expresses ability or possibility",
     examples: [
       { de: "Ich kann gut schwimmen.", en: "I can swim well." },
-      { de: "Kannst du Deutsch?", en: "Can you (speak) German?" },
-      { de: "Er kann heute nicht kommen.", en: "He cannot come today." },
+      { de: "Kannst du heute Abend Deutsch mit uns sprechen?", en: "Can you speak German with us tonight?" },
+      { de: "Er kann heute nicht zur Party kommen, er muss arbeiten.", en: "He cannot come to the party today, he has to work." },
     ],
   },
   {
@@ -113,42 +113,42 @@ export const modalMeanings: ModalMeaning[] = [
     meaning: "müssen zeigt, dass etwas notwendig ist — Pflicht, Zwang, Dringlichkeit.",
     en: "must / to have to — expresses necessity or obligation",
     examples: [
-      { de: "Ich muss morgen früh aufstehen.", en: "I have to get up early tomorrow." },
-      { de: "Du musst die Hausaufgaben machen.", en: "You must do the homework." },
-      { de: "Wir müssen jetzt gehen.", en: "We have to leave now." },
+      { de: "Ich muss morgen früh aufstehen, mein Zug fährt um 6 Uhr.", en: "I have to get up early tomorrow, my train leaves at 6 o'clock." },
+      { de: "Du musst die Hausaufgaben machen, sonst gibt es Ärger.", en: "You must do your homework, otherwise there will be trouble." },
+      { de: "Wir müssen jetzt gehen, der Film fängt gleich an.", en: "We have to leave now, the movie starts soon." },
     ],
   },
   {
     id: "wollen",
     verb: "wollen",
-    meaning: "wollen zeigt einen festen Willen, ein Ziel oder eine Absicht — stärker als möchten.",
+    meaning: "wollen zeigt einen festen Willen, ein Ziel oder eine Absicht — stärker und direkter als möchten.",
     en: "to want to — expresses a firm intention or goal",
     examples: [
-      { de: "Ich will Arzt werden.", en: "I want to become a doctor." },
-      { de: "Sie will nach Hause gehen.", en: "She wants to go home." },
-      { de: "Wollt ihr mitkommen?", en: "Do you (guys) want to come along?" },
+      { de: "Ich will Arzt werden und kranken Menschen helfen.", en: "I want to become a doctor and help sick people." },
+      { de: "Sie will nach Hause gehen, weil sie müde ist.", en: "She wants to go home because she is tired." },
+      { de: "Wollt ihr am Wochenende mit uns wandern gehen?", en: "Do you want to go hiking with us this weekend?" },
     ],
   },
   {
     id: "sollen",
     verb: "sollen",
-    meaning: "sollen zeigt eine Empfehlung, einen Rat oder eine Pflicht, die von别人 kommt.",
+    meaning: "sollen zeigt eine Empfehlung, einen Rat oder eine Pflicht, die von jemand anderem kommt.",
     en: "should / ought to — expresses advice, recommendation, or external obligation",
     examples: [
-      { de: "Du sollst mehr Wasser trinken.", en: "You should drink more water." },
-      { de: "Er soll den Arzt besuchen.", en: "He should visit the doctor." },
-      { de: "Ihr sollt pünktlich sein.", en: "You (guys) should be on time." },
+      { de: "Du sollst mehr Wasser trinken, das ist gesund.", en: "You should drink more water, it is healthy." },
+      { de: "Er soll den Arzt besuchen, er hustet schon eine Woche.", en: "He should see the doctor, he has been coughing for a week." },
+      { de: "Ihr sollt pünktlich sein, der Lehrer wartet nicht.", en: "You should be on time, the teacher will not wait." },
     ],
   },
   {
     id: "dürfen",
     verb: "dürfen",
-    meaning: "dürfen zeigt, ob etwas erlaubt ist — Erlaubnis, Genehmigung, Verbot.",
+    meaning: "dürfen zeigt, ob etwas erlaubt ist — Erlaubnis, Genehmigung oder Verbot.",
     en: "may / to be allowed to — expresses permission",
     examples: [
-      { de: "Darf ich fragen?", en: "May I ask?" },
-      { de: "Hier darf man nicht rauchen.", en: "You are not allowed to smoke here." },
-      { de: "Die Kinder dürfen bis 22 Uhr fernsehen.", en: "The children may watch TV until 10 PM." },
+      { de: "Darf ich dich etwas fragen?", en: "May I ask you something?" },
+      { de: "Hier darf man nicht rauchen, das ist verboten.", en: "You are not allowed to smoke here, it is forbidden." },
+      { de: "Die Kinder dürfen bis 22 Uhr fernsehen, dann ist Schlafenszeit.", en: "The children may watch TV until 10 PM, then it is bedtime." },
     ],
   },
 ];
@@ -184,7 +184,7 @@ export const introFlows: { tokens: FlowToken[]; en: string; qa: { q: string; a: 
       { t: "ihm", tag: "Dativ-Objekt", tone: "dat" },
       { t: "antworten.", tag: "Infinitiv", tone: "verb" },
     ],
-    en: "We must answer him.",
+    en: "We have to answer him.",
     qa: { q: "Wem müssen wir antworten?", a: "→ ihm (Dativ)" },
   },
 ];
@@ -208,40 +208,40 @@ export type LabQ = { pre: string; post: string; options: string[]; correct: stri
 
 export const labQuestions: LabQ[] = [
   {
-    pre: "Ich ", post: " dir gern.",
-    options: ["helfe", "helfst"],
+    pre: "Ich ", post: " dir gern bei den Hausaufgaben.",
+    options: ["helfe", "hilfst"],
     correct: "helfe",
-    why: "helfen — ich helfe. Das Modalverb konjugiert sich nach dem Subjekt.",
+    why: "helfen ist ein Dativ-Verb — ich helfe. Kein Modalverb hier, das Vollverb wird konjugiert.",
   },
   {
-    pre: "Kannst du ", post: " bitte?",
+    pre: "Kannst du ", post: " bitte helfen?",
     options: ["mir", "mich"],
     correct: "mir",
-    why: "helfen ist ein Dativ-Verb — Wem helfe ich? mir.",
+    why: "helfen ist ein Dativ-Verb — Wem sollst du helfen? mir.",
   },
   {
-    pre: "Du ", post: " Deutsch lernen.",
-    options: ["musst", "musst"],
+    pre: "Du ", post: " viel für die Prüfung lernen.",
+    options: ["musst", "müsst"],
     correct: "musst",
-    why: "müssen — du musst. Vokalwechsel im Singular!",
+    why: "müssen — du musst. Vokalwechsel ü → u im Singular!",
   },
   {
-    pre: "Er ", post: " das nicht machen.",
+    pre: "Er ", post: " heute nicht mitkommen.",
     options: ["darf", "darfst"],
     correct: "darf",
-    why: "dürfen — er darf. Im Singular gibt es keinen -st.",
+    why: "dürfen — er darf. In der 3. Person Singular steht nur der Stamm mit Vokalwechsel ü → a.",
   },
   {
-    pre: "Wir ", m: "", post: " nach Hause gehen.",
-    options: ["wollen", "willst"],
+    pre: "Wir ", post: " am Wochenende nach Hause gehen.",
+    options: ["wollen", "wollt"],
     correct: "wollen",
-    why: "wollen — wir wollen. Im Plural bleibt der Stamm.",
+    why: "wollen — wir wollen. Im Plural bleibt der volle Stamm o.",
   },
   {
-    pre: "Sie ", post: " dem Kind helfen.",
+    pre: "Anna ", post: " dem Kind helfen.",
     options: ["soll", "sollst"],
     correct: "soll",
-    why: "sollen — sie soll. Drittperson Singular = Stamm.",
+    why: "sollen — Anna (sie, 3. Person Singular) soll. Kein Vokalwechsel bei sollen.",
   },
 ];
 
@@ -256,10 +256,10 @@ export type ModalExample = {
 };
 
 export const modalExamples: ModalExample[] = [
-  { subj: "Ich", modal: "möchte", dativ: "dir", infinitiv: "helfen", en: "I would like to help you.", note: "möchte + Dativ + Infinitiv" },
-  { subj: "Du", modal: "kannst", dativ: "mir", infinitiv: "danken", en: "You can thank me.", note: "können — Vokalwechsel ö→a" },
-  { subj: "Er", modal: "muss", dativ: "ihr", infinitiv: "antworten", en: "He must answer her.", note: "müssen — Vokalwechsel ü→u" },
-  { subj: "Wir", modal: "wollen", dativ: "euch", infinitiv: "gratulieren", en: "We want to congratulate you.", note: "wollen — Vokalwechsel o→i" },
-  { subj: "Ihr", modal: "sollt", dativ: "ihm", infinitiv: "glauben", en: "You (guys) should believe him.", note: "sollen — kein Vokalwechsel" },
-  { subj: "Sie", modal: "darf", dativ: "dir", infinitiv: "helfen", en: "She may help you.", note: "dürfen — Vokalwechsel ü→a" },
+  { subj: "Ich", modal: "möchte", dativ: "dir", infinitiv: "helfen", en: "I would like to help you with your homework.", note: "möchte + Dativ + Infinitiv" },
+  { subj: "Du", modal: "kannst", dativ: "mir", infinitiv: "danken", en: "You can thank me for the birthday gift.", note: "können — Vokalwechsel ö→a" },
+  { subj: "Er", modal: "muss", dativ: "ihr", infinitiv: "antworten", en: "He has to answer her because she is waiting.", note: "müssen — Vokalwechsel ü→u" },
+  { subj: "Wir", modal: "wollen", dativ: "euch", infinitiv: "gratulieren", en: "We want to congratulate you on your exam.", note: "wollen — Vokalwechsel o→i" },
+  { subj: "Ihr", modal: "sollt", dativ: "ihm", infinitiv: "glauben", en: "You should believe him, he is telling the truth.", note: "sollen — kein Vokalwechsel" },
+  { subj: "Sie", modal: "darf", dativ: "dir", infinitiv: "helfen", en: "She is allowed to help you with the move.", note: "dürfen — Vokalwechsel ü→a" },
 ];
