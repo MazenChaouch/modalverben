@@ -75,6 +75,84 @@ export const chapters: ChapterDef[] = [
   },
 ];
 
+/* ---------- modal verb meanings & examples ---------- */
+export type ModalMeaning = {
+  id: string;
+  verb: string;
+  meaning: string;
+  en: string;
+  examples: { de: string; en: string }[];
+};
+
+export const modalMeanings: ModalMeaning[] = [
+  {
+    id: "möchten",
+    verb: "möchten",
+    meaning: "möchte ausdrücken, dass man etwas gern hätte oder tun würde — höflich, weich, wunschbezogen.",
+    en: "would like to — expresses a polite wish or desire",
+    examples: [
+      { de: "Ich möchte einen Kaffee, bitte.", en: "I would like a coffee, please." },
+      { de: "Wir möchten nach Berlin fahren.", en: "We would like to go to Berlin." },
+      { de: "Möchtest du mir helfen?", en: "Would you like to help me?" },
+    ],
+  },
+  {
+    id: "können",
+    verb: "können",
+    meaning: "können drückt aus, ob etwas möglich ist oder ob man die Fähigkeit dazu hat.",
+    en: "can / to be able to — expresses ability or possibility",
+    examples: [
+      { de: "Ich kann gut schwimmen.", en: "I can swim well." },
+      { de: "Kannst du Deutsch?", en: "Can you (speak) German?" },
+      { de: "Er kann heute nicht kommen.", en: "He cannot come today." },
+    ],
+  },
+  {
+    id: "müssen",
+    verb: "müssen",
+    meaning: "müssen zeigt, dass etwas notwendig ist — Pflicht, Zwang, Dringlichkeit.",
+    en: "must / to have to — expresses necessity or obligation",
+    examples: [
+      { de: "Ich muss morgen früh aufstehen.", en: "I have to get up early tomorrow." },
+      { de: "Du musst die Hausaufgaben machen.", en: "You must do the homework." },
+      { de: "Wir müssen jetzt gehen.", en: "We have to leave now." },
+    ],
+  },
+  {
+    id: "wollen",
+    verb: "wollen",
+    meaning: "wollen zeigt einen festen Willen, ein Ziel oder eine Absicht — stärker als möchten.",
+    en: "to want to — expresses a firm intention or goal",
+    examples: [
+      { de: "Ich will Arzt werden.", en: "I want to become a doctor." },
+      { de: "Sie will nach Hause gehen.", en: "She wants to go home." },
+      { de: "Wollt ihr mitkommen?", en: "Do you (guys) want to come along?" },
+    ],
+  },
+  {
+    id: "sollen",
+    verb: "sollen",
+    meaning: "sollen zeigt eine Empfehlung, einen Rat oder eine Pflicht, die von别人 kommt.",
+    en: "should / ought to — expresses advice, recommendation, or external obligation",
+    examples: [
+      { de: "Du sollst mehr Wasser trinken.", en: "You should drink more water." },
+      { de: "Er soll den Arzt besuchen.", en: "He should visit the doctor." },
+      { de: "Ihr sollt pünktlich sein.", en: "You (guys) should be on time." },
+    ],
+  },
+  {
+    id: "dürfen",
+    verb: "dürfen",
+    meaning: "dürfen zeigt, ob etwas erlaubt ist — Erlaubnis, Genehmigung, Verbot.",
+    en: "may / to be allowed to — expresses permission",
+    examples: [
+      { de: "Darf ich fragen?", en: "May I ask?" },
+      { de: "Hier darf man nicht rauchen.", en: "You are not allowed to smoke here." },
+      { de: "Die Kinder dürfen bis 22 Uhr fernsehen.", en: "The children may watch TV until 10 PM." },
+    ],
+  },
+];
+
 /* ---------- sentence flows for intro chapter ---------- */
 export type FlowToken = { t: string; tag: string; tone: "nom" | "verb" | "akk" | "dat" };
 

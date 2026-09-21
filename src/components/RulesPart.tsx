@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import type { ReactNode } from "react";
 import {
-  B, M, N, R, introFlows, marqueeItems, modalExamples,
+  B, M, N, R, introFlows, marqueeItems, modalExamples, modalMeanings,
 } from "../data/content";
 import {
   MODAL_VERBS,
@@ -268,6 +268,39 @@ export const RulesPart = ({ onGoExercises }: { onGoExercises: () => void }) => (
         />
         <div className="space-y-7">
           <ModalTable />
+
+          {/* --- Bedeutungen & Beispiele --- */}
+          <Reveal>
+            <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent mb-1">Bedeutungen & Beispiele</div>
+          </Reveal>
+
+          <div className="space-y-4">
+            {modalMeanings.map((m, i) => (
+              <Reveal key={m.id} delay={i * 0.04}>
+                <div className="rounded-2xl border border-line bg-white/55 p-5 md:p-6">
+                  <div className="flex items-baseline gap-3 mb-2">
+                    <span className="font-display text-2xl font-[700]">{m.verb}</span>
+                    <span className="text-sm text-ink-soft italic">{m.en}</span>
+                  </div>
+                  <p className="text-[15px] leading-relaxed text-ink/80 mb-3">{m.meaning}</p>
+                  <div className="space-y-2">
+                    {m.examples.map((ex, j) => (
+                      <div key={j} className="flex items-start gap-2.5 text-[14px]">
+                        <span className="shrink-0 w-5 h-5 rounded-full bg-ink/10 text-[10px] font-bold flex items-center justify-center mt-0.5">
+                          {j + 1}
+                        </span>
+                        <div>
+                          <span className="font-semibold">{ex.de}</span>
+                          <span className="text-ink-soft ml-2 italic">{ex.en}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
           <GoldenRule>
             Die 1. und 3. Person Singular sind <B>gleich</B>: ich kann = er kann, ich muss = er muss.
             Nur <B>du</B> bekommt ein -st: du kannst, du musst, du darfst.
