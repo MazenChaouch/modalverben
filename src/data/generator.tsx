@@ -121,14 +121,14 @@ const tModalConj = (c: BuilderCtx): GenExercise => {
   const enForm = subj.en === "I" ? "I" : (subj.third ? subj.en : subj.en.toLowerCase());
 
   return {
-    uid: "", n: c.n, cat: "modal", gender: "-",
+    uid: `s0-l0-i0`, n: c.n, cat: "modal", gender: "-",
     segments: [seg(`${subj.t} `), blk("a"), seg(` ${verbPhrase}.`)],
     cue: `(${modal})`,
     blanks: [{ id: "a", answers: [form] }],
     solution: `${subj.t} ${form} ${verbPhrase}.`,
-    en: `${enForm} ${MODAL_EN[modal]} ${verbPhrase.replace(/en$/, "e").replace(/$/, "")}.`,
-    tip: `Konjugiere „${modal}" für „${subj.person}". ${MODAL_VERBS[modal].vokalwechsel ? `Vokalwechsel: ${MODAL_VERBS[modal].vokalwechsel}` : "Kein Vokalwechsel im Singular!"}`,
-    why: <>„{modal}" für <B>{subj.person}</B> = <B>{form}</B>.{MODAL_VERBS[modal].vokalwechsel ? <> Vokalwechsel: <B>{MODAL_VERBS[modal].vokalwechsel}</B>.</> : <> Kein Vokalwechsel.</>}</>,
+    en: `${enForm} ${MODAL_EN[modal]} ${verbPhrase}.`,
+    tip: `Konjugiere "${modal}" für "${subj.person}". ${MODAL_VERBS[modal].vokalwechsel ? `Vokalwechsel: ${MODAL_VERBS[modal].vokalwechsel}` : "Kein Vokalwechsel im Singular!"}`,
+    why: <>"{modal}" für <B>{subj.person}</B> = <B>{form}</B>.{MODAL_VERBS[modal].vokalwechsel ? <> Vokalwechsel: <B>{MODAL_VERBS[modal].vokalwechsel}</B>.</> : <> Kein Vokalwechsel.</>}</>,
   };
 };
 
@@ -145,7 +145,7 @@ const tModalDativ = (c: BuilderCtx): GenExercise => {
   const enSubj = subj.en === "I" ? "I" : (subj.third ? subj.en : subj.en.toLowerCase());
 
   return {
-    uid: "", n: c.n, cat: "modal", gender: "-",
+    uid: `s0-l0-i0`, n: c.n, cat: "modal", gender: "-",
     segments: [seg(`${subj.t} ${modalForm} `), blk("a"), seg(` ${DAT_VERBS[datVerb].inf}.`)],
     cue: `(${obj === "sie.pl" ? "sie (Pl.)" : obj})`,
     blanks: [{ id: "a", answers: [pronDatForm] }],
@@ -165,7 +165,7 @@ const tDefArticle = (c: BuilderCtx): GenExercise => {
   const ans = defDat(noun.g);
 
   return {
-    uid: "", n: c.n, cat: "article", gender: noun.g,
+    uid: `s0-l0-i0`, n: c.n, cat: "article", gender: noun.g,
     segments: [seg(`${subj.t} ${verb} `), blk("a"), seg(` ${noun.word}.`)],
     cue: `(${noun.art} ${noun.word})`,
     blanks: [{ id: "a", answers: [ans] }],
@@ -187,7 +187,7 @@ const tIndefArticle = (c: BuilderCtx): GenExercise => {
   const ans = einDat(noun.g);
 
   return {
-    uid: "", n: c.n, cat: "article", gender: noun.g,
+    uid: `s0-l0-i0`, n: c.n, cat: "article", gender: noun.g,
     segments: [seg(`${subj.t} ${verb} `), blk("a"), seg(` ${noun.word}.`)],
     cue: "(ein)",
     blanks: [{ id: "a", answers: [ans] }],
@@ -210,7 +210,7 @@ const tPoss = (c: BuilderCtx): GenExercise => {
   const ans = possDat(stem, noun.g);
 
   return {
-    uid: "", n: c.n, cat: "poss", gender: noun.g,
+    uid: `s0-l0-i0`, n: c.n, cat: "poss", gender: noun.g,
     segments: [seg(`${subj.t} ${verb} `), blk("a"), seg(` ${noun.word}.`)],
     cue: `(${stem})`,
     blanks: [{ id: "a", answers: [ans] }],
@@ -232,7 +232,7 @@ const tPronoun = (c: BuilderCtx): GenExercise => {
   const ans = pronDat[obj];
 
   return {
-    uid: "", n: c.n, cat: "pron", gender: "-",
+    uid: `s0-l0-i0`, n: c.n, cat: "pron", gender: "-",
     segments: [seg(`${subj.t} ${verb} `), blk("a"), seg(".")],
     cue: `(${obj === "sie.pl" ? "sie (Pl.)" : obj})`,
     blanks: [{ id: "a", answers: [ans] }],
@@ -258,7 +258,7 @@ const tModalPossDativ = (c: BuilderCtx): GenExercise => {
   const enSubj = subj.en === "I" ? "I" : (subj.third ? subj.en : subj.en.toLowerCase());
 
   return {
-    uid: "", n: c.n, cat: "mixed", gender: noun.g,
+    uid: `s0-l0-i0`, n: c.n, cat: "mixed", gender: noun.g,
     segments: [seg(`${subj.t} ${modalForm} `), blk("a"), seg(` ${noun.word} ${inf}.`)],
     cue: `(${stem} · ${noun.art} ${noun.word})`,
     blanks: [{ id: "a", answers: [ans] }],
@@ -319,7 +319,7 @@ const tDatAkk = (c: BuilderCtx): GenExercise => {
   const v = pick(c.rng, DAT_AKK_DATA);
   const segments: Segment[] = v.segs.map((s) => (s === "a" ? blk("a") : seg(s)));
   return {
-    uid: "", n: c.n, cat: "mixed", gender: "-",
+    uid: `s0-l0-i0`, n: c.n, cat: "mixed", gender: "-",
     segments,
     cue: "(Modalverb oder Pronomen?)",
     blanks: [{ id: "a", answers: [v.a] }],
@@ -337,7 +337,7 @@ const tIstHilft = (c: BuilderCtx): GenExercise => {
   const a1 = possDat(stem, noun.g);
   const a2 = possDat(stem, noun.g);
   return {
-    uid: "", n: c.n, cat: "mixed", gender: noun.g,
+    uid: `s0-l0-i0`, n: c.n, cat: "mixed", gender: noun.g,
     segments: [seg("Das ist "), blk("a"), seg(` ${noun.word}. Ich helfe `), blk("b"), seg(` ${noun.word}.`)],
     cue: `(${stem})`,
     blanks: [{ id: "a", answers: [a1] }, { id: "b", answers: [a2] }],
