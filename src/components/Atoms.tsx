@@ -115,6 +115,7 @@ const toneStyles: Record<string, { line: string; chip: string }> = {
   nom: { line: "border-ink/50", chip: "bg-ink text-paper" },
   verb: { line: "border-ink/25", chip: "bg-paper-deep text-ink-soft border border-line" },
   akk: { line: "border-accent", chip: "bg-accent text-white" },
+  dat: { line: "border-blau", chip: "bg-blau text-white" },
 };
 
 export const SentenceFlow = ({
@@ -122,7 +123,7 @@ export const SentenceFlow = ({
   en,
   qa,
 }: {
-  tokens: { t: string; tag: string; tone: "nom" | "verb" | "akk" }[];
+  tokens: { t: string; tag: string; tone: "nom" | "verb" | "akk" | "dat" }[];
   en: string;
   qa?: { q: string; a: string };
 }) => (
